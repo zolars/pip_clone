@@ -2,7 +2,7 @@ import itertools
 import os
 
 if not os.path.exists("output"):
-  os.mkdir("output")
+    os.mkdir("output")
 
 with open("requirements.txt", "r") as fp:
     packages = fp.readlines()
@@ -37,6 +37,7 @@ with open("requirements.txt", "r") as fp:
     --implementation {implementation} \
     --abi cp{python_version} \
     --progress-bar off \
+    --no-deps\
     -d ./output/\
     {package}
 
@@ -47,6 +48,7 @@ with open("requirements.txt", "r") as fp:
     --implementation {implementation} \
     --abi cp{python_version}m \
     --progress-bar off \
+    --no-deps\
     -d ./output/\
     {package}
     ''')
